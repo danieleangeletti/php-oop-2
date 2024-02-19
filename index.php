@@ -19,6 +19,11 @@ require __DIR__ . "/products.php";
 
   <!-- CSS -->
   <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -32,6 +37,18 @@ require __DIR__ . "/products.php";
   <main>
     <div class="container d-flex">
       <div class="card ms-2 me-2" style="width: 18rem;">
+        <h5 class="text-center">
+          <?php if ($dentastix->get_category() == 'dogs') {
+            ?>
+            <i class="fa-solid fa-dog"></i>
+            <?php
+          } else if ($dentastix->get_category() == 'cats') {
+            ?>
+              <i class="fa-solid fa-cat"></i>
+            <?php
+          }
+          ?>
+        </h5>
         <img src=<?php echo $dentastix->get_img() ?> class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">
@@ -43,12 +60,21 @@ require __DIR__ . "/products.php";
           <h5>
             <?php echo $dentastix->price ?>
           </h5>
-          <h5>
-            <?php echo $dentastix->category ?>
-          </h5>
         </div>
       </div>
       <div class="card ms-2 me-2" style="width: 18rem;">
+        <h5 class="text-center">
+          <?php if ($fruugo_bone->get_category() == 'dogs') {
+            ?>
+            <i class="fa-solid fa-dog"></i>
+            <?php
+          } else if ($fruugo_bone->get_category() == 'cats') {
+            ?>
+              <i class="fa-solid fa-cat"></i>
+            <?php
+          }
+          ?>
+        </h5>
         <img src=<?php echo $fruugo_bone->get_img() ?> class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">
@@ -60,12 +86,21 @@ require __DIR__ . "/products.php";
           <h5>
             <?php echo $fruugo_bone->price ?>
           </h5>
-          <h5>
-            <?php echo $fruugo_bone->category ?>
-          </h5>
         </div>
       </div>
       <div class="card ms-2 me-2" style="width: 18rem;">
+        <h5 class="text-center">
+          <?php if ($zooplus_special_cats_kennel->get_category() == 'dogs') {
+            ?>
+            <i class="fa-solid fa-dog"></i>
+            <?php
+          } else if ($zooplus_special_cats_kennel->get_category() == 'cats') {
+            ?>
+              <i class="fa-solid fa-cat"></i>
+            <?php
+          }
+          ?>
+        </h5>
         <img src=<?php echo $zooplus_special_cats_kennel->get_img() ?> class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">
@@ -76,9 +111,6 @@ require __DIR__ . "/products.php";
           </p>
           <h5>
             <?php echo $zooplus_special_cats_kennel->price ?>
-          </h5>
-          <h5>
-            <?php echo $zooplus_special_cats_kennel->category ?>
           </h5>
         </div>
       </div>
