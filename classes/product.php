@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "/category.php";
 class Product
 {
     public $id;
@@ -8,7 +9,7 @@ class Product
     public $brand;
     public $category;
     public $img;
-    public function __construct(int $id, string $name, string $price, string $description, string $brand, string $category, string $img)
+    public function __construct(int $id, string $name, string $price, string $description, string $brand, Category $category, string $img)
     {
         $this->id = $id;
         $this->name = $name;

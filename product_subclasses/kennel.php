@@ -5,7 +5,7 @@ class Kennel extends Product
     public $size;
     public $softness;
     public $maximum_recommended_weight;
-    public function __construct(int $id, string $name, string $price, string $description, string $brand, string $category, string $img, string $type_of_kennel, string $size, string $softness, string $maximum_recommended_weight)
+    public function __construct(int $id, string $name, string $price, string $description, string $brand, Category $category, string $img, string $type_of_kennel, string $size, string $softness, string $maximum_recommended_weight)
     {
         parent::__construct($id, $name, $price, $description, $brand, $category, $img);
         $this->type_of_kennel = $type_of_kennel;

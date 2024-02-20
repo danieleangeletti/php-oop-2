@@ -5,7 +5,7 @@ class Game extends Product
     public $recommended_age;
     public $shape;
     public $material;
-    public function __construct(int $id, string $name, string $price, string $description, string $brand, string $category, string $img, string $type_of_game, string $recommended_age, string $shape, string $material)
+    public function __construct(int $id, string $name, string $price, string $description, string $brand, Category $category, string $img, string $type_of_game, string $recommended_age, string $shape, string $material)
     {
         parent::__construct($id, $name, $price, $description, $brand, $category, $img);
         $this->type_of_game = $type_of_game;

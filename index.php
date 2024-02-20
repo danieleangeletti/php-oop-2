@@ -1,8 +1,8 @@
 <?php
-require __DIR__ . "/models/product.php";
-require __DIR__ . "/istances/food.php";
-require __DIR__ . "/istances/game.php";
-require __DIR__ . "/istances/kennel.php";
+require __DIR__ . "/classes/product.php";
+require __DIR__ . "/product_subclasses/food.php";
+require __DIR__ . "/product_subclasses/game.php";
+require __DIR__ . "/product_subclasses/kennel.php";
 require __DIR__ . "/products.php";
 ?>
 
