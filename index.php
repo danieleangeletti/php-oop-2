@@ -4,8 +4,6 @@ require __DIR__ . "/istances/food.php";
 require __DIR__ . "/istances/game.php";
 require __DIR__ . "/istances/kennel.php";
 require __DIR__ . "/products.php";
-require __DIR__ . "/models/customer.php";
-require __DIR__ . "/istances/me.php";
 ?>
 
 <!DOCTYPE html>
@@ -117,7 +115,6 @@ require __DIR__ . "/istances/me.php";
         </div>
       </div>
     </div>
-    <?php var_dump($me) ?>
   </main>
   <script type="text/javascript" src="./javascript/scripts.js"></script>
 </body>
