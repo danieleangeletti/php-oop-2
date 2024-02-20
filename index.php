@@ -36,84 +36,81 @@ require __DIR__ . "/products.php";
   </header>
   <main>
     <div class="container d-flex">
-      <div class="card ms-2 me-2" style="width: 18rem;">
-        <h5 class="text-center">
-          <?php if ($dentastix->get_category() == 'dogs') {
+      <?php
+      foreach ($all_products as $product) {
+        ?>
+        <div class="card ms-2 me-2" style="width: 18rem;">
+          <?php
+          if ($product->category->name == "dogs") {
             ?>
-            <i class="fa-solid fa-dog"></i>
+            <h3 class="text-end"><i class="fa-solid fa-dog"></i></h3>
             <?php
-          } else if ($dentastix->get_category() == 'cats') {
+          } else if ($product->category->name == "cats") {
             ?>
-              <i class="fa-solid fa-cat"></i>
+              <h3 class="text-end"><i class="fa-solid fa-cat"></i></h3>
+          <?php } ?>
+          <img src=<?php echo $product->get_img() ?> class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <?php echo $product->get_name() ?>
+            </h5>
+            <p class="card-text">
+              <?php echo $product->description ?>
+            </p>
+            <h5>
+              <?php echo $product->price ?>
+            </h5>
             <?php
-          }
-          ?>
-        </h5>
-        <img src=<?php echo $dentastix->get_img() ?> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            <?php echo $dentastix->get_name() ?>
-          </h5>
-          <p class="card-text">
-            <?php echo $dentastix->description ?>
-          </p>
-          <h5>
-            <?php echo $dentastix->price ?>
-          </h5>
+            if (get_class($product) == "Food") {
+              ?>
+              <p>Ingredients:
+                <?php echo $product->ingredients ?>
+              </p>
+              <p>Proteins:
+                <?php echo $product->proteins ?>
+              </p>
+              <p>Fats:
+                <?php echo $product->fats ?>
+              </p>
+              <p>Calcium:
+                <?php echo $product->calcium ?>
+              </p>
+              <p>Phosphorus:
+                <?php echo $product->phosphorus ?>
+              </p>
+              <p>Magnesium:
+                <?php echo $product->magnesium ?>
+              </p>
+              <p>Humidity:
+                <?php echo $product->humidity ?>
+              </p>
+              <?php
+            }
+            ?>
+            <?php
+            if (get_class($product) == "Game") {
+              ?>
+              <p>Shape:
+                <?php echo $product->shape ?>
+              </p>
+              <p>Material:
+                <?php echo $product->material ?>
+              </p>
+            <?php } ?>
+            <?php
+            if (get_class($product) == "Kennel") {
+              ?>
+              <p>Size:
+                <?php echo $product->size ?>
+              </p>
+              <p>Softness:
+                <?php echo $product->softness ?>
+              </p>
+            <?php } ?>
+          </div>
         </div>
-      </div>
-      <div class="card ms-2 me-2" style="width: 18rem;">
-        <h5 class="text-center">
-          <?php if ($fruugo_bone->get_category() == 'dogs') {
-            ?>
-            <i class="fa-solid fa-dog"></i>
-            <?php
-          } else if ($fruugo_bone->get_category() == 'cats') {
-            ?>
-              <i class="fa-solid fa-cat"></i>
-            <?php
-          }
-          ?>
-        </h5>
-        <img src=<?php echo $fruugo_bone->get_img() ?> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            <?php echo $fruugo_bone->get_name() ?>
-          </h5>
-          <p class="card-text">
-            <?php echo $fruugo_bone->description ?>
-          </p>
-          <h5>
-            <?php echo $fruugo_bone->price ?>
-          </h5>
-        </div>
-      </div>
-      <div class="card ms-2 me-2" style="width: 18rem;">
-        <h5 class="text-center">
-          <?php if ($zooplus_special_cats_kennel->get_category() == 'dogs') {
-            ?>
-            <i class="fa-solid fa-dog"></i>
-            <?php
-          } else if ($zooplus_special_cats_kennel->get_category() == 'cats') {
-            ?>
-              <i class="fa-solid fa-cat"></i>
-            <?php
-          }
-          ?>
-        </h5>
-        <img src=<?php echo $zooplus_special_cats_kennel->get_img() ?> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            <?php echo $zooplus_special_cats_kennel->get_name() ?>
-          </h5>
-          <p class="card-text">
-            <?php echo $zooplus_special_cats_kennel->description ?>
-          </p>
-          <h5>
-            <?php echo $zooplus_special_cats_kennel->price ?>
-          </h5>
-        </div>
-      </div>
+        <?php
+      } ?>
     </div>
   </main>
   <script type="text/javascript" src="./javascript/scripts.js"></script>

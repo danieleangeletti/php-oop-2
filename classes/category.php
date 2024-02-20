@@ -6,4 +6,8 @@ class Category
     {
         $this->name = $name;
     }
+    public function get_name()
+    {
+        return $this->name;
+    }
 }
