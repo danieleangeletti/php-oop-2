@@ -1,10 +1,13 @@
 <?php
+require_once __DIR__ . "/../traits/free_shipping.php";
 class Kennel extends Product
 {
+    use FreeShipping;
     public $type_of_kennel;
     public $size;
     public $softness;
     public $maximum_recommended_weight;
+    private $free_shipping = null;
     public function __construct(int $id, string $name, string $price, string $description, string $brand, Category $category, string $img, string $type_of_kennel, string $size, string $softness, string $maximum_recommended_weight)
     {
         parent::__construct($id, $name, $price, $description, $brand, $category, $img);
@@ -12,21 +15,5 @@ class Kennel extends Product
         $this->size = $size;
         $this->softness = $softness;
         $this->maximum_recommended_weight = $maximum_recommended_weight;
-    }
-    public function get_type_of_kennel()
-    {
-        return $this->type_of_kennel;
-    }
-    public function get_size()
-    {
-        return $this->size;
-    }
-    public function get_softness()
-    {
-        return $this->softness;
-    }
-    public function get_maximum_recommended_weight()
-    {
-        return $this->maximum_recommended_weight;
     }
 }

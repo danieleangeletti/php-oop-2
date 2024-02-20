@@ -1,9 +1,9 @@
 <?php
-require __DIR__ . "/classes/product.php";
-require __DIR__ . "/product_subclasses/food.php";
-require __DIR__ . "/product_subclasses/game.php";
-require __DIR__ . "/product_subclasses/kennel.php";
-require __DIR__ . "/products.php";
+require_once __DIR__ . "/classes/product.php";
+require_once __DIR__ . "/product_subclasses/food.php";
+require_once __DIR__ . "/product_subclasses/game.php";
+require_once __DIR__ . "/product_subclasses/kennel.php";
+require_once __DIR__ . "/products.php";
 ?>
 
 <!DOCTYPE html>
@@ -49,15 +49,15 @@ require __DIR__ . "/products.php";
             ?>
               <h3 class="text-end"><i class="fa-solid fa-cat"></i></h3>
           <?php } ?>
-          <img src=<?php echo $product->get_img() ?> class="card-img-top" alt="...">
+          <img src=<?php echo $product->img ?> class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">
-              <?php echo $product->get_name() ?>
+              <?php echo $product->name ?>
             </h5>
             <p class="card-text">
               <?php echo $product->description ?>
             </p>
-            <h5>
+            <h5>€
               <?php echo $product->price ?>
             </h5>
             <?php
